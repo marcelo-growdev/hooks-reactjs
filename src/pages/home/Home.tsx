@@ -4,7 +4,6 @@ import React, {
   useRef,
   useMemo,
   useCallback,
-  StrictMode,
 } from 'react';
 import { Button, Divider, Grid, TextField, Typography } from '@mui/material';
 
@@ -27,18 +26,18 @@ const Home: React.FC = () => {
     setDescription('Adicionado valor!');
   };
 
-  const handleSort = () => {
-    let sort = 0;
+  // const handleSort = () => {
+  //   let sort = 0;
 
-    do {
-      sort = Math.floor(Math.random() * 1000);
-    } while (sort < 100);
+  //   do {
+  //     sort = Math.floor(Math.random() * 1000);
+  //   } while (sort < 100);
 
-    console.log('outra funcao');
-    console.log(sort);
+  //   console.log('outra funcao');
+  //   console.log(sort);
 
-    return sort;
-  };
+  //   return sort;
+  // };
 
   const handleSortMemo = useMemo(() => {
     let sort = 0;

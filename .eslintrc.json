@@ -19,6 +19,8 @@
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
   "rules": {
+    "no-console": "off",
+    "default-param-last": "off",
     "prettier/prettier": "error",
     "react/jsx-one-expression-per-line": "off",
     "react/function-component-definition": "off",
