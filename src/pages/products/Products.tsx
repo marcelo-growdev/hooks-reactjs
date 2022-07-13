@@ -1,14 +1,24 @@
 import { Button, Divider, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { create } from '../../store/modules/products/actions';
 import { IProduct } from '../../store/modules/products/reducer';
 import { IUser } from '../../store/modules/user/reducer';
+import { marvel } from '../../services';
 
 const Products: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    async function getData() {
+      const test = await marvel.get('characters');
+      console.log(test);
+    }
+
+    getData();
+  }, []);
 
   const productsRedux: IProduct[] = useSelector((state: any) => state.products);
 
